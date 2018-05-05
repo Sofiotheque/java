@@ -1305,7 +1305,7 @@ function getmashrandom(e) {
         dataType: "jsonp",
         success: function(e) {
             ass.addClass('hide-load');
-            for (var a = e.feed.entry, r = a.length, l = t(r), i = 0; 5 > i; i++) {
+            for (var a = e.feed.entry, r = a.length, l = t(r), i = 0; 8 > i; i++) {
                 for (var o = 0; o < e.feed.entry[l[i]].link.length; o++)
                     if ("alternate" == a[l[i]].link[o].rel) {
                         var c = e.feed.entry[l[i]].link[o].href;
@@ -1327,7 +1327,7 @@ function getmashrecent(e) {
     e.find('span#tab-mash-recent').addClass('loaded');
     $.ajax({
         type: 'GET',
-        url: '/feeds/posts/summary?max-results=5&alt=json-in-script',
+        url: '/feeds/posts/summary?max-results=8&alt=json-in-script',
         async: true,
         contentType: "application/json",
         dataType: 'jsonp',
@@ -1466,7 +1466,7 @@ function getRelated(e) {
                     }
                 }
                 if ($('.related-post .related-item').length == 0) {
-                    $('.related-post').append('<h3>No Related Post Found</h3>')
+                    $('.related-post').append('<h3>Pas de documents similaires</h3>')
                 } else {
                     $('.related-post .related-inner').owlCarousel({
                         items: 3,
